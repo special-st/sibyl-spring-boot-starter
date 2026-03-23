@@ -23,8 +23,14 @@ class SibylLoggingEnvironmentPostProcessor : EnvironmentPostProcessor {
         environment: ConfigurableEnvironment,
         application: SpringApplication,
     ) {
+        // Check both resolved active profiles and the property value
+        // (EnvironmentPostProcessor runs before profiles are fully resolved)
         val activeProfiles = environment.activeProfiles.toSet()
-        val shouldEnableJson = activeProfiles.any { it in JSON_LOG_PROFILES }
+        val profilesProperty = environment.getProperty("spring.profiles.active")
+            ?.split(",")?.map { it.trim() }?.toSet() ?: emptySet()
+        val allProfiles = activeProfiles + profilesProperty
+
+        val shouldEnableJson = allProfiles.any { it in JSON_LOG_PROFILES }
 
         if (shouldEnableJson) {
             val defaults = mapOf(
