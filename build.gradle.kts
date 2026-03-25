@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "st.special"
-version = "0.2.1"
+version = "0.3.0"
 
 java {
     toolchain {
@@ -29,6 +29,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-autoconfigure")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("io.micrometer:micrometer-registry-prometheus")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     // Optional: DB and Redis metrics
     compileOnly("org.springframework.boot:spring-boot-starter-data-jpa")
