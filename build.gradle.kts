@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "st.special"
-version = "0.3.0"
+version = "0.4.0"
 
 java {
     toolchain {
@@ -31,10 +31,10 @@ dependencies {
     implementation("io.micrometer:micrometer-registry-prometheus")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-    // Optional: DB and Redis metrics
     compileOnly("org.springframework.boot:spring-boot-starter-data-jpa")
     compileOnly("org.springframework.boot:spring-boot-starter-data-redis")
     compileOnly("org.springframework.boot:spring-boot-starter-web")
+    compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
     annotationProcessor("org.springframework.boot:spring-boot-autoconfigure-processor")
 }

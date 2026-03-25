@@ -1,2 +1,3 @@
 st.special.sibyl.autoconfigure.SibylMonitoringAutoConfiguration
 st.special.sibyl.autoconfigure.SibylAuthAutoConfiguration
+st.special.sibyl.autoconfigure.SibylRedisAutoConfiguration
