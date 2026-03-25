@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "st.special"
-version = "0.4.0"
+version = "0.5.0"
 
 java {
     toolchain {
@@ -34,6 +34,7 @@ dependencies {
     compileOnly("org.springframework.boot:spring-boot-starter-data-jpa")
     compileOnly("org.springframework.boot:spring-boot-starter-data-redis")
     compileOnly("org.springframework.boot:spring-boot-starter-web")
+    compileOnly("org.springframework.boot:spring-boot-starter-webflux")
     compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
     annotationProcessor("org.springframework.boot:spring-boot-autoconfigure-processor")
